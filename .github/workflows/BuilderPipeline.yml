@@ -78,7 +78,7 @@ jobs:
           path: build
 
   buildForMac:
-    needs: build
+    needs: checklicense
     name: Build for ${{ matrix.targetPlatform }}
     runs-on: macos-latest
     strategy:
@@ -107,7 +107,7 @@ jobs:
           path: build
 
   buildForWindows:
-    needs: buildForMac
+    needs: checklicense
     name: Build for ${{ matrix.targetPlatform }}
     runs-on: windows-2019
     strategy:
