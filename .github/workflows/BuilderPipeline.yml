@@ -114,7 +114,7 @@ jobs:
       fail-fast: false
       matrix:
         targetPlatform:
-          - StandaloneWindows
+          #- StandaloneWindows
           - StandaloneWindows64
           - WSAPlayer
     steps:
