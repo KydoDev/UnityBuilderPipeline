@@ -49,7 +49,7 @@ jobs:
   buildWSA:
     needs: checklicense
     name: Build for ${{ matrix.targetPlatform }}
-    runs-on: windows-latest
+    runs-on: windows-2019
     strategy:
       fail-fast: true
       matrix:
