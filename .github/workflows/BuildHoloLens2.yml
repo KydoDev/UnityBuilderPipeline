@@ -1,0 +1,31 @@
+name: Build HoloLens 2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Unity
+      uses: game-ci/unity-setup@v1
+      with:
+        unityVersion: 2020.3.19f1
+        modules: Windows-Mono
+
+    - name: Build project
+      run: |
+        /path/to/Unity/Editor/Unity -batchmode -nographics -quit -projectPath .
+        # Aggiungi altri comandi personalizzati per configurare la build
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Build
+        path: ./Builds
