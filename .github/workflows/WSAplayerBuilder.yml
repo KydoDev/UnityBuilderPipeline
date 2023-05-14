@@ -49,16 +49,16 @@ jobs:
   buildWSA:
     needs: checklicense
     name: Build for ${{ matrix.targetPlatform }}
-    runs-on: latest-windows
+    runs-on: windows-latest
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         targetPlatform:
           - WSAPlayer
     steps:
       - uses: actions/checkout@v3
         with:
-          lfs: false
+          lfs: true
       - uses: actions/cache@v3
         with:
           path: Library
