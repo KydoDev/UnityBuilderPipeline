@@ -77,6 +77,7 @@ jobs:
 
 
   checkEnd:
+    needs: buildWSA
     name: Check for UNITY_LICENSE END in GitHub Secrets
     runs-on: ubuntu-latest
     outputs:
